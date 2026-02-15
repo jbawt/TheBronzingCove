@@ -4,6 +4,7 @@ import {
   setMobileMenuOpen,
   toggleMobileMenu
 } from "../../features/ui/uiSlice";
+import { ThemeToggle } from "./ThemeToggle";
 import logoMark from "../../assets/Logo-notext-transparent.png";
 
 export function SiteHeader() {
@@ -51,6 +52,7 @@ export function SiteHeader() {
           <a href="#about" onClick={() => dispatch(setMobileMenuOpen(false))}>
             Contact
           </a>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

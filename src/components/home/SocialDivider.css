@@ -30,6 +30,10 @@
   }
 }
 
+[data-theme="dark"] .flow-divider--social .flow-divider__megaphone path {
+  stroke: rgba(212, 165, 116, 0.8);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .flow-divider--social .flow-divider__megaphone path:nth-child(4),
   .flow-divider--social .flow-divider__megaphone path:nth-child(5),

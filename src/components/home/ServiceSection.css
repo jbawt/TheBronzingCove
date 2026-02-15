@@ -165,3 +165,23 @@
     gap: 1rem;
   }
 }
+
+[data-theme="dark"] .flow-band::before {
+  background: linear-gradient(125deg, rgba(35, 48, 46, 0.72) 0%, rgba(26, 37, 35, 0.52) 100%);
+  border-color: rgba(58, 77, 74, 0.8);
+}
+
+[data-theme="dark"] .flow-service-item {
+  border-color: rgba(58, 77, 74, 0.85);
+  background: rgba(35, 48, 46, 0.8);
+}
+
+[data-theme="dark"] .flow-service-item:hover {
+  border-color: rgba(74, 157, 146, 0.4);
+}
+
+[data-theme="dark"] .flow-packages span {
+  border-color: rgba(212, 165, 116, 0.65);
+  background: rgba(35, 48, 46, 0.9);
+  color: #d4a574;
+}

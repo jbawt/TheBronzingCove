@@ -13,6 +13,12 @@
   background: linear-gradient(125deg, rgba(255, 255, 255, 0.72) 0%, rgba(248, 239, 225, 0.52) 100%);
   border: 1px solid rgba(229, 212, 188, 0.8);
   z-index: -1;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+[data-theme="dark"] .flow-gallery::before {
+  background: linear-gradient(125deg, rgba(35, 48, 46, 0.72) 0%, rgba(26, 37, 35, 0.52) 100%);
+  border-color: rgba(58, 77, 74, 0.8);
 }
 
 .flow-gallery__copy h2 {
@@ -106,6 +112,15 @@
   background: rgba(226, 242, 239, 0.95);
 }
 
+[data-theme="dark"] .flow-gallery__control {
+  background: rgba(35, 48, 46, 0.8);
+  border-color: rgba(74, 157, 146, 0.25);
+}
+
+[data-theme="dark"] .flow-gallery__control:hover {
+  background: rgba(45, 62, 59, 0.95);
+}
+
 .flow-gallery__dots {
   margin-top: 0.75rem;
   display: flex;
@@ -149,6 +164,12 @@
 
 .flow-photo:hover {
   transform: translateY(-4px);
+}
+
+[data-theme="dark"] .flow-photo {
+  background: linear-gradient(145deg, rgba(35, 48, 46, 0.95), rgba(31, 45, 43, 0.82));
+  border-color: rgba(74, 157, 146, 0.4);
+  color: #b8d4d0;
 }
 
 .flow-photo--focus {

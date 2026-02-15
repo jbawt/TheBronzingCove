@@ -38,3 +38,13 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+[data-theme="dark"] .flow-hero {
+  background: linear-gradient(
+    135deg,
+    rgba(35, 48, 46, 0.95) 0%,
+    rgba(26, 37, 35, 0.92) 45%,
+    rgba(31, 45, 43, 0.9) 100%
+  );
+  border-color: rgba(58, 77, 74, 0.75);
+}

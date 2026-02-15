@@ -36,3 +36,8 @@
     transform: scale(1);
   }
 }
+
+[data-theme="dark"] .flow-divider--gallery .flow-divider__camera rect,
+[data-theme="dark"] .flow-divider--gallery .flow-divider__camera circle {
+  stroke: rgba(212, 165, 116, 0.7);
+}

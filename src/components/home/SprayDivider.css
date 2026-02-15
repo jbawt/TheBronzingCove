@@ -69,3 +69,14 @@
     transform: translateX(3px) translateY(-1px);
   }
 }
+
+[data-theme="dark"] .flow-divider__line,
+[data-theme="dark"] .flow-divider__icon rect,
+[data-theme="dark"] .flow-divider__icon path,
+[data-theme="dark"] .flow-divider__spray {
+  stroke: rgba(212, 165, 116, 0.7);
+}
+
+[data-theme="dark"] .flow-divider__mist {
+  fill: rgba(212, 165, 116, 0.5);
+}

@@ -36,6 +36,16 @@
   background: #ffffff;
 }
 
+[data-theme="dark"] .sticky-social-sidebar__link {
+  background: rgba(35, 48, 46, 0.96);
+  border-color: rgba(212, 165, 116, 0.4);
+  color: var(--bronze);
+}
+
+[data-theme="dark"] .sticky-social-sidebar__link:hover {
+  background: rgba(45, 62, 59, 1);
+}
+
 .sticky-social-sidebar__link svg {
   width: 20px;
   height: 20px;
