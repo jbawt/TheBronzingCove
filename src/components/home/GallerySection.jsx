@@ -35,16 +35,6 @@ export function GallerySection() {
         <h2>Results that glow in every light.</h2>
       </div>
       <div className="flow-gallery__carousel">
-        <div className="flow-gallery__ornament flow-gallery__ornament--left" aria-hidden="true">
-          <svg viewBox="0 0 360 120" role="img">
-            <path d="M8 60h242" />
-            <path d="M32 40h178" />
-            <path d="M48 80h160" />
-            <circle cx="276" cy="60" r="16" />
-            <path d="M276 36v-8m0 64v-8m24-24h8m-64 0h8" />
-            <path d="M292 44l6-6m-44 44l6-6m0-32l-6-6m44 44l-6-6" />
-          </svg>
-        </div>
         <button className="flow-gallery__control" type="button" onClick={goToPrevious} aria-label="Previous gallery slide">
           ‹
         </button>
@@ -62,16 +52,6 @@ export function GallerySection() {
         <button className="flow-gallery__control" type="button" onClick={goToNext} aria-label="Next gallery slide">
           ›
         </button>
-        <div className="flow-gallery__ornament flow-gallery__ornament--right" aria-hidden="true">
-          <svg viewBox="0 0 360 120" role="img">
-            <path d="M8 60h242" />
-            <path d="M32 40h178" />
-            <path d="M48 80h160" />
-            <circle cx="276" cy="60" r="16" />
-            <path d="M276 36v-8m0 64v-8m24-24h8m-64 0h8" />
-            <path d="M292 44l6-6m-44 44l6-6m0-32l-6-6m44 44l-6-6" />
-          </svg>
-        </div>
       </div>
       <div className="flow-gallery__dots" aria-label="Gallery slide selectors">
         {gallerySlides.map((slide, index) => (

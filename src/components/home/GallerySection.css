@@ -1,6 +1,6 @@
 .flow-gallery {
   width: 100%;
-  padding: 2rem clamp(1rem, 4vw, 3.5rem) 1.4rem;
+  padding: 3rem clamp(1rem, 4vw, 3.5rem) 2.5rem;
   animation: reveal 720ms ease 130ms both;
   position: relative;
 }
@@ -29,14 +29,15 @@
 .flow-gallery__carousel {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: 1fr auto auto auto 1fr;
+  grid-template-columns: auto auto auto;
   gap: 0.5rem;
   align-items: center;
+  justify-content: center;
 }
 
 .flow-gallery__ornament {
   min-width: 0;
-  height: 118px;
+  height: 150px;
   display: flex;
   align-items: center;
 }
@@ -66,7 +67,9 @@
 
 .flow-gallery__viewport {
   overflow: hidden;
-  width: min(680px, 90vw);
+  width: min(60vw, 100%);
+  height: 450px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -75,17 +78,25 @@
   grid-template-columns: 0.22fr 1fr 0.22fr;
   gap: 0.55rem;
   align-items: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.flow-gallery__stage > * {
+  min-width: 0;
 }
 
 .flow-gallery__control {
   border: 1px solid rgba(45, 118, 109, 0.25);
   background: rgba(255, 255, 255, 0.8);
   color: var(--accent);
-  width: 38px;
-  height: 38px;
+  width: 48px;
+  height: 48px;
   border-radius: 999px;
   cursor: pointer;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 1;
   display: grid;
   place-items: center;
@@ -116,19 +127,24 @@
 }
 
 .flow-photo {
-  min-height: 110px;
+  width: 100%;
+  max-width: 100%;
   aspect-ratio: 16 / 9;
+  height: auto;
+  min-height: calc(450px * 0.62);
   border-radius: 16px;
   border: 1px dashed rgba(45, 118, 109, 0.4);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(240, 248, 246, 0.82));
   color: #4a726d;
-  font-size: 0.9rem;
+  font-size: calc(450px * 0.05);
   font-weight: 600;
   display: grid;
   place-items: center;
   text-align: center;
-  padding: 0.65rem;
+  padding: calc(450px * 0.0267);
   transition: transform 170ms ease;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .flow-photo:hover {
@@ -136,15 +152,59 @@
 }
 
 .flow-photo--focus {
-  min-height: 130px;
+  min-height: calc(450px * 0.756);
 }
 
 .flow-photo--peek {
-  min-height: 84px;
+  min-height: calc(450px * 0.489);
   opacity: 0.68;
   transform: scale(0.9);
   filter: saturate(0.8);
-  font-size: 0.72rem;
+  font-size: calc(450px * 0.00256);
+}
+
+@media (max-width: 1200px) {
+  .flow-gallery__viewport {
+    width: min(55vw, 100%);
+    height: 400px;
+  }
+
+  .flow-photo {
+    min-height: calc(400px * 0.62);
+    font-size: calc(400px * 0.0031);
+    padding: calc(400px * 0.0267);
+  }
+
+  .flow-photo--focus {
+    min-height: calc(400px * 0.756);
+  }
+
+  .flow-photo--peek {
+    min-height: calc(400px * 0.489);
+    font-size: calc(400px * 0.00256);
+  }
+}
+
+@media (max-width: 960px) {
+  .flow-gallery__viewport {
+    width: min(70vw, 100%);
+    height: 380px;
+  }
+
+  .flow-photo {
+    min-height: calc(380px * 0.62);
+    font-size: calc(380px * 0.0031);
+    padding: calc(380px * 0.0267);
+  }
+
+  .flow-photo--focus {
+    min-height: calc(380px * 0.756);
+  }
+
+  .flow-photo--peek {
+    min-height: calc(380px * 0.489);
+    font-size: calc(380px * 0.00256);
+  }
 }
 
 @media (max-width: 680px) {
@@ -159,12 +219,24 @@
   }
 
   .flow-gallery__viewport {
-    width: min(500px, 85vw);
+    width: min(85vw, 100%);
+    height: 320px;
+    max-width: 100%;
   }
 
   .flow-gallery__stage {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+
+  .flow-photo {
+    min-height: calc(320px * 0.62);
+    font-size: calc(320px * 0.0031);
+    padding: calc(320px * 0.0267);
+  }
+
+  .flow-photo--focus {
+    min-height: calc(320px * 0.756);
   }
 
   .flow-photo--peek {
@@ -173,8 +245,16 @@
 }
 
 @media (max-width: 460px) {
+  .flow-gallery__viewport {
+    width: min(90vw, 100%);
+    height: 280px;
+    max-width: 100%;
+  }
+
   .flow-photo {
-    min-height: 90px;
+    min-height: calc(280px * 0.62);
+    font-size: calc(280px * 0.0031);
+    padding: calc(280px * 0.0267);
   }
 
   .flow-gallery__stage {
@@ -182,7 +262,7 @@
   }
 
   .flow-photo--focus {
-    min-height: 100px;
+    min-height: calc(280px * 0.756);
   }
 
   .flow-photo--peek {
