@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://jbawt.github.io/the-bronzing-cove",
+  "homepage": "https://jbawt.github.io/TheBronzingCove/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
