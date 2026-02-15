@@ -61,6 +61,7 @@ export function ServiceSection() {
         <span>Photoshoots</span>
         <span>Birthdays</span>
         <span>Vacation Prep</span>
+        <span>Graduations</span>
       </div>
     </div>
   );

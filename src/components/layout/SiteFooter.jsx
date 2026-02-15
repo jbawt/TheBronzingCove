@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import logoMark from "../../assets/Logo-notext-transparent.png";
 
 export function SiteFooter() {
@@ -18,8 +19,8 @@ export function SiteFooter() {
           </div>
         </div>
         <nav className="site-footer__nav" aria-label="Footer navigation">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/services">Services</NavLink>
           <a href="#about">What to Expect</a>
           <a href="#about">Contact</a>
         </nav>
