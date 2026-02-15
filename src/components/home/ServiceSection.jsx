@@ -55,13 +55,16 @@ export function ServiceSection() {
           </ul>
         </div>
       </div>
-      <div className="flow-packages">
-        <span>Weddings</span>
-        <span>Proms</span>
-        <span>Photoshoots</span>
-        <span>Birthdays</span>
-        <span>Vacation Prep</span>
-        <span>Graduations</span>
+      <div className="flow-packages-wrapper">
+        <h3 className="flow-packages__title">Packages</h3>
+        <div className="flow-packages">
+          <span>Weddings</span>
+          <span>Proms</span>
+          <span>Photoshoots</span>
+          <span>Birthdays</span>
+          <span>Vacation Prep</span>
+          <span>Graduations</span>
+        </div>
       </div>
     </div>
   );

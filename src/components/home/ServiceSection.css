@@ -108,8 +108,19 @@
   margin-top: 0.35rem;
 }
 
+.flow-packages-wrapper {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.flow-packages__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .flow-packages {
-  margin-top: 0.85rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
