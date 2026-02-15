@@ -1,4 +1,5 @@
 import "./HomeHero.css";
+import { HeroContact } from "./HeroContact";
 
 export function HomeHero() {
   return (
@@ -10,14 +11,7 @@ export function HomeHero() {
         create skin-finished glow for everyday confidence and event-level
         moments.
       </p>
-      <div className="flow-hero__actions">
-        <a className="btn btn--primary" href="#services">
-          View Services
-        </a>
-        <a className="btn btn--ghost" href="#gallery">
-          See Gallery
-        </a>
-      </div>
+      <HeroContact />
     </div>
   );
 }

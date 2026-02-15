@@ -1,0 +1,103 @@
+.expanded-about {
+  width: 100%;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 3.5rem);
+  background: linear-gradient(125deg, rgba(248, 239, 225, 0.52) 0%, rgba(255, 255, 255, 0.72) 100%);
+  border-top: 1px solid rgba(229, 212, 188, 0.3);
+}
+
+[data-theme="dark"] .expanded-about {
+  background: linear-gradient(125deg, rgba(26, 37, 35, 0.52) 0%, rgba(35, 48, 46, 0.72) 100%);
+  border-top-color: rgba(58, 77, 74, 0.3);
+}
+
+.expanded-about__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgba(229, 212, 188, 0.85);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(3px);
+}
+
+[data-theme="dark"] .expanded-about__content {
+  border-color: rgba(58, 77, 74, 0.85);
+  background: rgba(35, 48, 46, 0.8);
+}
+
+.expanded-about__title {
+  margin: 0 0 2rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+}
+
+.expanded-about__body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+[data-theme="dark"] .expanded-about__content {
+  border-color: rgba(58, 77, 74, 0.85);
+  background: rgba(35, 48, 46, 0.8);
+}
+
+.expanded-about__logo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.expanded-about__logo img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(21, 77, 70, 0.12));
+}
+
+.expanded-about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.expanded-about__text p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+}
+
+@media (max-width: 960px) {
+  .expanded-about__content {
+    padding: 1.5rem;
+  }
+
+  .expanded-about__body {
+    grid-template-columns: 150px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .expanded-about__content {
+    padding: 1.5rem;
+  }
+
+  .expanded-about__body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .expanded-about__logo {
+    justify-content: center;
+  }
+
+  .expanded-about__logo img {
+    max-width: 120px;
+  }
+}

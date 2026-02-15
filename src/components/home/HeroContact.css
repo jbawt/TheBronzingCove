@@ -1,0 +1,52 @@
+.hero-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.3rem;
+}
+
+.hero-contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-contact__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-contact__icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.hero-contact__link {
+  color: var(--text-soft);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.hero-contact__link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 680px) {
+  .hero-contact__item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

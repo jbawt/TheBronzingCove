@@ -22,7 +22,7 @@ export function SiteFooter() {
           <NavLink to="/">Home</NavLink>
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/what-to-expect">What to Expect</NavLink>
-          <a href="#about">Contact</a>
+          <NavLink to="/contact">Contact</NavLink>
         </nav>
         <div className="site-footer__copyright">
           <small>&copy; {currentYear} The Bronzing Cove. All rights reserved.</small>
