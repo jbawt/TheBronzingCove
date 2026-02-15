@@ -1,54 +1,203 @@
 .flow-story {
   width: 100%;
-  padding: 2rem clamp(1rem, 4vw, 3.5rem) 1.2rem;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 1rem;
-  align-items: start;
+  padding: 2rem 0 1.2rem;
   animation: reveal 720ms ease 230ms both;
 }
 
-.flow-story__testimonials,
-.flow-story__about {
-  border-radius: 20px;
+.flow-story__panel {
+  border-radius: 0;
   border: 1px solid rgba(229, 212, 188, 0.86);
   background: linear-gradient(162deg, rgba(255, 255, 255, 0.88), rgba(248, 241, 230, 0.7));
   padding: 1rem;
   text-align: center;
 }
 
-.flow-story__testimonials h2,
-.flow-story__about h2 {
+.flow-story__panel h2 {
   margin: 0;
   color: var(--accent);
   font-size: clamp(1.2rem, 2.3vw, 1.8rem);
 }
 
-.flow-story__testimonials blockquote {
-  margin: 0;
-  margin-top: 0.7rem;
-  border-radius: 12px;
-  border: 1px solid rgba(45, 118, 109, 0.18);
-  background: rgba(255, 255, 255, 0.82);
-  padding: 0.8rem;
-  color: #2f5f5a;
-  line-height: 1.54;
+.comments-carousel {
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+  height: 320px;
+  margin: 0.75rem auto 0;
+  overflow: hidden;
 }
 
-.flow-story__about p {
+.comments-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 420ms ease;
+}
+
+.comments-carousel__fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 24px;
+  pointer-events: none;
+}
+
+.comments-carousel__fade--top {
+  top: 0;
+  background: linear-gradient(180deg, rgba(252, 249, 243, 0.95), rgba(252, 249, 243, 0));
+}
+
+.comments-carousel__fade--bottom {
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(252, 249, 243, 0.95), rgba(252, 249, 243, 0));
+}
+
+.comment-card {
+  margin: 0;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  gap: 0.7rem;
+  text-align: left;
+  border-radius: 12px;
+  border: 1px solid rgba(45, 118, 109, 0.2);
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.75rem;
+}
+
+.comment-card__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(45, 118, 109, 0.14);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.72rem;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.comment-card__body {
+  min-width: 0;
+}
+
+.comment-card__meta,
+.comment-card__text,
+.comment-card__actions {
+  margin: 0;
+}
+
+.comment-card__meta {
+  color: #2f5f5a;
+  font-size: 0.8rem;
+}
+
+.comment-card__meta span {
+  color: #5f8a84;
+  margin-left: 0.4rem;
+}
+
+.comment-card__text {
+  margin-top: 0.24rem;
+  color: #2f5f5a;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.comment-card__actions {
+  margin-top: 0.38rem;
+  color: #5f8a84;
+  font-size: 0.78rem;
+}
+
+.social-post {
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(45, 118, 109, 0.2);
+  text-align: left;
+}
+
+.social-post__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social-post__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(45, 118, 109, 0.14);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.7rem;
+  display: grid;
+  place-items: center;
+}
+
+.social-post__avatar img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+.social-post__meta p {
+  margin: 0;
+  color: #2f5f5a;
+  font-size: 0.76rem;
+}
+
+.social-post__meta span {
+  color: #5f8a84;
+  margin-left: 0.3rem;
+}
+
+.social-post__title {
+  margin: 0.7rem 0 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.social-post__content p {
   margin: 0.7rem 0 1rem;
   color: var(--text-soft);
   line-height: 1.65;
 }
 
-@media (max-width: 680px) {
-  .flow-story {
-    grid-template-columns: 1fr;
-  }
+.social-post__actions {
+  margin-top: 0.45rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(45, 118, 109, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 960px) {
-  .flow-story {
-    grid-template-columns: 1fr;
+.social-post__actions span {
+  color: #5f8a84;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 680px) {
+  .comments-carousel {
+    width: 100%;
+  }
+
+  .comment-card {
+    width: 100%;
+  }
+
+  .social-post {
+    width: 100%;
   }
 }

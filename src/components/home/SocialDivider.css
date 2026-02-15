@@ -1,0 +1,39 @@
+.flow-divider--social .flow-divider__megaphone path {
+  fill: none;
+  stroke: rgba(45, 118, 109, 0.7);
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flow-divider--social .flow-divider__megaphone path:nth-child(4),
+.flow-divider--social .flow-divider__megaphone path:nth-child(5),
+.flow-divider--social .flow-divider__megaphone path:nth-child(6) {
+  animation: socialPing 1.6s ease-in-out infinite;
+}
+
+.flow-divider--social .flow-divider__megaphone path:nth-child(5) {
+  animation-delay: 120ms;
+}
+
+.flow-divider--social .flow-divider__megaphone path:nth-child(6) {
+  animation-delay: 240ms;
+}
+
+@keyframes socialPing {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-divider--social .flow-divider__megaphone path:nth-child(4),
+  .flow-divider--social .flow-divider__megaphone path:nth-child(5),
+  .flow-divider--social .flow-divider__megaphone path:nth-child(6) {
+    animation: none;
+  }
+}

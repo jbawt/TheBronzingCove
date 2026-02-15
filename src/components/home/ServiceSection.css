@@ -11,7 +11,6 @@
   border-radius: 0;
   background: linear-gradient(125deg, rgba(255, 255, 255, 0.72) 0%, rgba(248, 239, 225, 0.52) 100%);
   border: 1px solid rgba(229, 212, 188, 0.8);
-  box-shadow: 0 18px 30px rgba(29, 70, 65, 0.1);
   transform: none;
   z-index: -1;
 }
@@ -55,14 +54,13 @@
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(3px);
   padding: 1.1rem 1rem 1rem;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease;
   text-align: center;
 }
 
 .flow-service-item:hover {
   transform: translateY(-5px);
   border-color: rgba(45, 118, 109, 0.4);
-  box-shadow: 0 14px 24px rgba(21, 77, 70, 0.16);
 }
 
 .flow-service-item h3 {
@@ -148,21 +146,22 @@
 @keyframes chipPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(198, 155, 99, 0);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(198, 155, 99, 0.09);
-  }
-}
-
-@media (max-width: 680px) {
-  .flow-service-lane {
-    grid-template-columns: 1fr;
+    opacity: 0.85;
   }
 }
 
 @media (max-width: 960px) {
   .flow-service-lane {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .flow-service-lane {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
