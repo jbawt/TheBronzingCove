@@ -1,0 +1,54 @@
+.flow-story {
+  width: 100%;
+  padding: 2rem clamp(1rem, 4vw, 3.5rem) 1.2rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+  animation: reveal 720ms ease 230ms both;
+}
+
+.flow-story__testimonials,
+.flow-story__about {
+  border-radius: 20px;
+  border: 1px solid rgba(229, 212, 188, 0.86);
+  background: linear-gradient(162deg, rgba(255, 255, 255, 0.88), rgba(248, 241, 230, 0.7));
+  padding: 1rem;
+  text-align: center;
+}
+
+.flow-story__testimonials h2,
+.flow-story__about h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+}
+
+.flow-story__testimonials blockquote {
+  margin: 0;
+  margin-top: 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(45, 118, 109, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.8rem;
+  color: #2f5f5a;
+  line-height: 1.54;
+}
+
+.flow-story__about p {
+  margin: 0.7rem 0 1rem;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+@media (max-width: 680px) {
+  .flow-story {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .flow-story {
+    grid-template-columns: 1fr;
+  }
+}

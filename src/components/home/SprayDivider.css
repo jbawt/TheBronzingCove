@@ -1,0 +1,71 @@
+.flow-divider {
+  width: 100%;
+  padding: 0.75rem clamp(1rem, 4vw, 3.5rem) 0.45rem;
+  display: flex;
+  justify-content: center;
+}
+
+.flow-divider__svg {
+  width: min(640px, 96vw);
+  height: auto;
+}
+
+.flow-divider__line,
+.flow-divider__icon rect,
+.flow-divider__icon path,
+.flow-divider__spray {
+  fill: none;
+  stroke: rgba(45, 118, 109, 0.62);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.flow-divider__line {
+  opacity: 0.8;
+}
+
+.flow-divider__spray {
+  stroke-dasharray: 10;
+  animation: sprayPulse 1.5s ease-in-out infinite;
+}
+
+.flow-divider__mist {
+  fill: rgba(45, 118, 109, 0.42);
+  animation: mistDrift 1.8s ease-in-out infinite;
+}
+
+.flow-divider__mist--two {
+  animation-delay: 250ms;
+}
+
+.flow-divider__mist--three {
+  animation-delay: 500ms;
+}
+
+@keyframes sprayPulse {
+  0% {
+    stroke-dashoffset: 10;
+    opacity: 0.45;
+  }
+  50% {
+    stroke-dashoffset: 2;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -6;
+    opacity: 0.45;
+  }
+}
+
+@keyframes mistDrift {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateX(3px) translateY(-1px);
+  }
+}
