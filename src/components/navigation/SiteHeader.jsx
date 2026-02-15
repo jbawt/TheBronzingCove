@@ -50,9 +50,13 @@ export function SiteHeader() {
           >
             Services
           </NavLink>
-          <a href="#about" onClick={() => dispatch(setMobileMenuOpen(false))}>
+          <NavLink
+            to="/what-to-expect"
+            className={({ isActive }) => (isActive ? "active" : "")}
+            onClick={() => dispatch(setMobileMenuOpen(false))}
+          >
             What to Expect
-          </a>
+          </NavLink>
           <a href="#about" onClick={() => dispatch(setMobileMenuOpen(false))}>
             Contact
           </a>

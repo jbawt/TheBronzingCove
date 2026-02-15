@@ -7,7 +7,10 @@ const gallerySlides = [
   "Vacation Tan Placeholder",
   "Photoshoot Glow Placeholder",
   "Event Glow Placeholder",
-  "Custom Bronze Placeholder"
+  "Custom Bronze Placeholder",
+  "Natural Glow Placeholder",
+  "Evening Glow Placeholder",
+  "Special Occasion Placeholder"
 ];
 
 export function GallerySection() {

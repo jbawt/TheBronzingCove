@@ -21,7 +21,7 @@ export function SiteFooter() {
         <nav className="site-footer__nav" aria-label="Footer navigation">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/services">Services</NavLink>
-          <a href="#about">What to Expect</a>
+          <NavLink to="/what-to-expect">What to Expect</NavLink>
           <a href="#about">Contact</a>
         </nav>
         <div className="site-footer__copyright">
