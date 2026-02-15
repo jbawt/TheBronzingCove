@@ -13,7 +13,7 @@ const links = [
   },
   {
     label: "Facebook",
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/thebronzingcove",
     external: true,
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -23,7 +23,7 @@ const links = [
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/thebronzingcove/",
     external: true,
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
