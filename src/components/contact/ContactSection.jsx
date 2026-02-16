@@ -102,7 +102,7 @@ export function ContactSection() {
             </div>
             <h3>Location</h3>
             <p>Central Alberta</p>
-            <p className="contact-info-card__subtext">Serving the region with mobile and studio appointments</p>
+            <p className="contact-info-card__subtext">Serving Red Deer, Lacombe, Blackfalds, Ponoka, Innisfail, and all of Central Alberta with mobile and studio spray tanning appointments</p>
           </div>
 
           <div className="contact-info-card">

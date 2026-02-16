@@ -93,20 +93,20 @@ export function AboutSection() {
           </div>
           <div className="flow-story__about-content">
             <p>
-              We focus on prep, precision spraying, and expert aftercare so your
-              color applies evenly, develops beautifully, and fades smoothly. The
+              The Bronzing Cove specializes in professional spray tanning services throughout Central Alberta. We focus on prep, precision spraying, and expert aftercare so your
+              custom spray tan applies evenly, develops beautifully, and fades smoothly. The
               experience is personal, polished, and built around your goals.
             </p>
             <p>
-              As a proudly local studio serving Central Alberta, The Bronzing
-              Cove is built around community, connection, and consistent quality.
-              We love helping clients from across the region feel confident for
-              everyday glow, weddings, proms, photoshoots, and milestone events.
+              As Central Alberta's trusted spray tanning studio, The Bronzing
+              Cove serves clients in Red Deer, Lacombe, Blackfalds, Ponoka, Innisfail, and surrounding communities. We're built around community, connection, and consistent quality.
+              We love helping clients from across Central Alberta feel confident for
+              everyday glow, wedding spray tans, prom spray tans, photoshoots, and milestone events.
             </p>
             <p>
-              Every appointment is designed with a small-business level of care:
-              personalized recommendations, one-on-one attention, and results
-              that reflect your skin tone, schedule, and style.
+              Every spray tan appointment is designed with personalized care:
+              custom color matching, one-on-one attention, and results
+              that reflect your skin tone, schedule, and style. Whether you need a spray tan for your wedding, prom, or just want a natural glow, we're here to help.
             </p>
           </div>
         </div>

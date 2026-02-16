@@ -7,9 +7,8 @@ export function HomeHero() {
       <p className="section-kicker">Luxury Sunless Tanning Studio</p>
       <h1>Custom spray tans made modern.</h1>
       <p className="flow-hero__lead">
-        The Bronzing Cove combines precision artistry with premium formulas to
-        create skin-finished glow for everyday confidence and event-level
-        moments.
+        The Bronzing Cove is Central Alberta's premier spray tanning studio, combining precision artistry with premium formulas to
+        create natural, sun-kissed glow for everyday confidence and special events. Serving Red Deer, Lacombe, Blackfalds, and surrounding Central Alberta communities.
       </p>
       <HeroContact />
     </div>

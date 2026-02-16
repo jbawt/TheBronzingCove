@@ -9,8 +9,8 @@ export function WhatToExpectPage() {
       <div className="what-to-expect-hero">
         <h1>What to Expect</h1>
         <p className="what-to-expect-hero__subtitle">
-          Your guide to preparing for and maintaining your perfect spray tan.
-          Follow these steps for the best results.
+          Your complete guide to preparing for and maintaining your perfect spray tan in Central Alberta.
+          Follow these professional spray tanning pre-care and post-care steps for the best, longest-lasting results.
         </p>
       </div>
 

@@ -7,9 +7,8 @@ export function ServiceSection() {
         <p className="section-kicker">About our Service</p>
         <h2>Spray services built around your skin tone and schedule.</h2>
         <p>
-          Pick your ideal finish, your development timeline, and your depth.
-          Every appointment is designed to look clean, natural, and camera
-          ready.
+          Choose from our range of professional spray tanning options: pick your ideal finish, your development timeline, and your depth.
+          Every spray tan appointment in Central Alberta is designed to look clean, natural, and camera-ready for weddings, proms, photoshoots, and everyday confidence.
         </p>
       </div>
       <div className="flow-service-lane">

@@ -8,7 +8,7 @@ export function ContactPage() {
       <div className="contact-page-hero">
         <h1>Get in Touch</h1>
         <p className="contact-page-hero__subtitle">
-          Ready to achieve your perfect glow? We're here to help you every step of the way.
+          Ready to book your professional spray tan in Central Alberta? Contact The Bronzing Cove today. We're here to help you achieve your perfect glow every step of the way.
         </p>
       </div>
 
