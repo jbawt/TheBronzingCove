@@ -1,6 +1,57 @@
+import { useState } from "react";
 import "./ContactSection.css";
 
 export function ContactSection() {
+  const [formStatus, setFormStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus({ type: "", message: "" });
+
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone") || "",
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/.netlify/functions/sendContactEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          type: "success",
+          message: "Thank you! Your message has been sent successfully.",
+        });
+        e.target.reset();
+      } else {
+        setFormStatus({
+          type: "error",
+          message: result.error || "Failed to send message. Please try again.",
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        type: "error",
+        message: "An error occurred. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="contact-section">
       <div className="contact-section__header">
@@ -68,23 +119,30 @@ export function ContactSection() {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+        <form className="contact-form" onSubmit={handleSubmit}>
           <h3>Send us a Message</h3>
+          {formStatus.message && (
+            <div
+              className={`contact-form__status contact-form__status--${formStatus.type}`}
+            >
+              {formStatus.message}
+            </div>
+          )}
           <div className="contact-form__group">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" required />
+            <input type="text" id="name" name="name" required disabled={isSubmitting} />
           </div>
           <div className="contact-form__group">
             <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" required disabled={isSubmitting} />
           </div>
           <div className="contact-form__group">
             <label htmlFor="phone">Phone (Optional)</label>
-            <input type="tel" id="phone" name="phone" />
+            <input type="tel" id="phone" name="phone" disabled={isSubmitting} />
           </div>
           <div className="contact-form__group">
             <label htmlFor="subject">Subject</label>
-            <select id="subject" name="subject" required>
+            <select id="subject" name="subject" required disabled={isSubmitting}>
               <option value="">Select a subject</option>
               <option value="booking">Booking Inquiry</option>
               <option value="services">Services Question</option>
@@ -94,10 +152,10 @@ export function ContactSection() {
           </div>
           <div className="contact-form__group">
             <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+            <textarea id="message" name="message" rows="6" required disabled={isSubmitting}></textarea>
           </div>
-          <button type="submit" className="btn btn--primary">
-            Send Message
+          <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Send Message"}
           </button>
         </form>
       </div>
