@@ -3,7 +3,6 @@ import "./AboutSection.css";
 import logoMark from "../../assets/Logo-notext-transparent.png";
 
 export function AboutSection() {
-
   const testimonials = [
     {
       name: "Amber L.",
@@ -42,48 +41,57 @@ export function AboutSection() {
       text: "Custom undertone matching gave me the perfect glow for my skin tone.",
     }
   ];
-  const [commentIndex, setCommentIndex] = useState(0);
-  const [isTrackAnimated, setIsTrackAnimated] = useState(true);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
   const loopedTestimonials = [...testimonials, ...testimonials];
-  const trackStep = 144;
+  const displayIndex = currentIndex % testimonials.length;
 
   useEffect(() => {
     const intervalId = window.setInterval(() => {
-      setCommentIndex((prev) => prev + 1);
-    }, 2800);
+      setCurrentIndex((prev) => prev + 1);
+    }, 4000);
 
     return () => window.clearInterval(intervalId);
   }, []);
 
-  const handleTrackTransitionEnd = () => {
-    if (commentIndex < testimonials.length) {
-      return;
-    }
-
-    setIsTrackAnimated(false);
-    setCommentIndex(0);
-    window.requestAnimationFrame(() => {
+  const handleTransitionEnd = () => {
+    if (currentIndex >= testimonials.length) {
+      setIsAnimating(false);
+      setCurrentIndex(0);
       window.requestAnimationFrame(() => {
-        setIsTrackAnimated(true);
+        window.requestAnimationFrame(() => {
+          setIsAnimating(true);
+        });
       });
+    }
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => {
+      const newIndex = prev - 1;
+      return newIndex < 0 ? testimonials.length - 1 : newIndex;
+    });
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => {
+      const newIndex = prev + 1;
+      return newIndex >= testimonials.length ? 0 : newIndex;
     });
   };
 
   return (
     <div className="flow-story" id="about">
-      <div className="flow-story__panel">
-        <div className="social-post">
-          <div className="social-post__header">
-            <div className="social-post__avatar" aria-hidden="true">
-              <img src={logoMark} alt="" />
+      <div className="flow-story__container">
+        <div className="flow-story__about">
+          <div className="flow-story__about-header">
+            <div className="flow-story__logo">
+              <img src={logoMark} alt="The Bronzing Cove logo" />
             </div>
-            <div className="social-post__meta">
-              <p><strong>The Bronzing Cove</strong> <span>@thebronzingcove</span></p>
-              <p>Central Alberta · Local Business</p>
-            </div>
+            <h2>About The Bronzing Cove</h2>
           </div>
-          <p className="social-post__title">High-touch service with a modern beauty standard.</p>
-          <div className="social-post__content">
+          <div className="flow-story__about-content">
             <p>
               We focus on prep, precision spraying, and expert aftercare so your
               color applies evenly, develops beautifully, and fades smoothly. The
@@ -101,37 +109,65 @@ export function AboutSection() {
               that reflect your skin tone, schedule, and style.
             </p>
           </div>
-          <div className="social-post__actions">
-            <span>148 Likes</span>
-            <span>36 Comments</span>
-          </div>
         </div>
-        {/* <p className="section-kicker">Comment Section</p> */}
-        {/* <h2>Trusted for life moments that matter.</h2> */}
-        <div className="comments-carousel">
-          <div
-            className="comments-track"
-            style={{
-              transform: `translateY(-${commentIndex * trackStep}px)`,
-              transition: isTrackAnimated ? undefined : "none"
-            }}
-            onTransitionEnd={handleTrackTransitionEnd}
-          >
-            {loopedTestimonials.map((testimonial, index) => (
-              <div className="comment-card" key={`${testimonial.name}-${index}`}>
-                <div className="comment-card__avatar" aria-hidden="true">{testimonial.name.charAt(0)}</div>
-                <div className="comment-card__body">
-                  <p className="comment-card__meta">
-                    <strong>{testimonial.name}</strong> <span>{testimonial.username}</span> <span>{testimonial.date}</span>
-                  </p>
-                  <p className="comment-card__text">{testimonial.text}</p>
-                  <p className="comment-card__actions">Like · Reply</p>
-                </div>
+
+        <div className="flow-story__testimonials">
+          <h3 className="flow-story__testimonials-title">What Our Clients Say</h3>
+          <div className="testimonials-carousel">
+            <button 
+              className="testimonials-carousel__control testimonials-carousel__control--prev"
+              type="button"
+              onClick={goToPrevious}
+              aria-label="Previous testimonial"
+            >
+              ‹
+            </button>
+            <div className="testimonials-carousel__viewport">
+              <div 
+                className="testimonials-carousel__track"
+                style={{
+                  transform: `translateX(-${currentIndex * 100}%)`,
+                  transition: isAnimating ? "transform 500ms ease" : "none"
+                }}
+                onTransitionEnd={handleTransitionEnd}
+              >
+                {loopedTestimonials.map((testimonial, index) => (
+                  <div 
+                    key={`${testimonial.name}-${index}`}
+                    className="testimonial-card"
+                  >
+                    <div className="testimonial-card__header">
+                      <div className="testimonial-card__info">
+                        <p className="testimonial-card__name">{testimonial.name}</p>
+                      </div>
+                    </div>
+                    <div className="testimonial-card__quote">
+                      <p className="testimonial-card__text">{testimonial.text}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
+            <button 
+              className="testimonials-carousel__control testimonials-carousel__control--next"
+              type="button"
+              onClick={goToNext}
+              aria-label="Next testimonial"
+            >
+              ›
+            </button>
+          </div>
+          <div className="testimonials-carousel__dots">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`testimonials-carousel__dot ${displayIndex === index ? "is-active" : ""}`}
+                onClick={() => setCurrentIndex(index)}
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
             ))}
           </div>
-          <div className="comments-carousel__fade comments-carousel__fade--top" aria-hidden="true" />
-          <div className="comments-carousel__fade comments-carousel__fade--bottom" aria-hidden="true" />
         </div>
       </div>
     </div>
