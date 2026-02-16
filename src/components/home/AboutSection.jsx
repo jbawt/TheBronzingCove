@@ -104,9 +104,6 @@ export function AboutSection() {
           <div className="social-post__actions">
             <span>148 Likes</span>
             <span>36 Comments</span>
-            <a className="btn btn--primary" href="#home">
-              Book Your Custom Glow
-            </a>
           </div>
         </div>
         {/* <p className="section-kicker">Comment Section</p> */}
