@@ -3,7 +3,7 @@ import "./StickySocialSidebar.css";
 const links = [
   {
     label: "Contact",
-    href: "#about",
+    href: "/TheBronzingCove/contact",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M4 6h16v12H4z" />
