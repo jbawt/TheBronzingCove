@@ -33,7 +33,7 @@ export function ContactSection() {
       if (response.ok) {
         setFormStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully.",
+          message: "Thank you! Your message has been sent successfully!",
         });
         e.target.reset();
       } else {
